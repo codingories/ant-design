@@ -1252,3 +1252,69 @@ exports[`Form rtl render component should be rendered correctly in RTL direction
   </div>
 </div>
 `;
+
+exports[`Form should match snapshot for vertical layout 1`] = `
+<form
+  class="ant-form ant-form-horizontal"
+  id="test"
+>
+  <div
+    class="ant-form-item ant-form-item-vertical"
+  >
+    <div
+      class="ant-row ant-form-item-row"
+    >
+      <div
+        class="ant-col ant-form-item-control"
+      >
+        <div
+          class="ant-form-item-control-input"
+        >
+          <div
+            class="ant-form-item-control-input-content"
+          >
+            <textarea
+              class="ant-input ant-input-outlined"
+              id="test_test"
+              rows="4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form should match snapshot for vertical layout2 1`] = `
+<form
+  class="ant-form ant-form-vertical"
+  id="test"
+>
+  <div
+    class="ant-form-item ant-form-item-vertical"
+  >
+    <div
+      class="ant-row ant-form-item-row"
+    >
+      <div
+        class="ant-col ant-form-item-control"
+      >
+        <div
+          class="ant-form-item-control-input"
+        >
+          <div
+            class="ant-form-item-control-input-content"
+          >
+            <textarea
+              class="ant-input ant-input-outlined"
+              id="test_test"
+              rows="4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;

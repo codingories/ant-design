@@ -43,9 +43,9 @@ describe('Form', () => {
   rtlTest(Form);
   rtlTest(Form.Item);
 
-  (scrollIntoView as any).mockImplementation(() => {});
-  const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
-  const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+  (scrollIntoView as any).mockImplementation(() => { });
+  const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
+  const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => { });
 
   const changeValue = async (
     input: HTMLElement | null | number,
@@ -2589,4 +2589,29 @@ describe('Form', () => {
     await changeValue(0, '100');
     expectErrors([]);
   });
+
+  // https://github.com/ant-design/ant-design/issues/54025
+  it('should match snapshot for vertical layout', () => {
+    const { container } = render(
+      <Form name="test" layout="horizontal">
+        <Form.Item layout="vertical" name="test">
+          <Input.TextArea rows={4} />
+        </Form.Item>
+      </Form>
+    );
+    
+    expect(container.firstChild).toMatchSnapshot();
+  })
+
+  it('should match snapshot for vertical layout2', () => {
+    const { container } = render(
+      <Form name="test" layout="vertical">
+        <Form.Item layout="vertical" name="test">
+          <Input.TextArea rows={4} />
+        </Form.Item>
+      </Form>
+    );
+    
+    expect(container.firstChild).toMatchSnapshot();
+  })
 });
