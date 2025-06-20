@@ -1,8 +1,9 @@
 import React from 'react';
-import { Form, Input } from 'antd';
+import { Divider, Form, Input } from 'antd';
 
 const App: React.FC = () => (
   <>
+    <Divider plain>input</Divider>
     <Form
       name="layout-multiple-horizontal"
       layout="horizontal"
@@ -42,7 +43,7 @@ const App: React.FC = () => (
         <Input />
       </Form.Item>
     </Form>
-    <br />
+    <Divider plain>input.TextArea</Divider>
     <Form
       name="layout-multiple-horizontal-textarea"
       layout="horizontal"
@@ -50,9 +51,16 @@ const App: React.FC = () => (
       wrapperCol={{ span: 20 }}
     >
       <Form.Item
+        label="horizontal"
+        name="horizontalTextArea"
+        rules={[{ required: true }]}
+      >
+        <Input.TextArea rows={5} /> 
+      </Form.Item>
+      <Form.Item
         layout="vertical"
         label="vertical"
-        name="vertical"
+        name="verticalTextArea"
         rules={[{ required: true }]}
         labelCol={{ span: 24 }}
         wrapperCol={{ span: 24 }}
@@ -68,12 +76,17 @@ const App: React.FC = () => (
       wrapperCol={{ span: 20 }}
     >
       <Form.Item
-        layout="vertical"
         label="vertical"
-        name="vertical"
+        name="verticalTextArea"
         rules={[{ required: true }]}
-        labelCol={{ span: 24 }}
-        wrapperCol={{ span: 24 }}
+      >
+        <Input.TextArea rows={5} />
+      </Form.Item>
+      <Form.Item
+        layout="horizontal"
+        label="horizontal"
+        name="horizontalTextArea"
+        rules={[{ required: true }]}
       >
         <Input.TextArea rows={5} />
       </Form.Item>
