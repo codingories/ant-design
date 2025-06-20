@@ -584,7 +584,7 @@ const genVerticalStyle: GenerateStyle<FormToken> = (token) => {
 
 const genItemVerticalStyle: GenerateStyle<FormToken> = (token) => {
   const { formItemCls, antCls } = token;
-  console.log('1234')
+  console.log('12345')
   return {
     [`${formItemCls}-vertical`]: {
       [`${formItemCls}-row`]: {
@@ -597,10 +597,17 @@ const genItemVerticalStyle: GenerateStyle<FormToken> = (token) => {
 
       [`${formItemCls}-control`]: {
         width: '100%',
+        minHeight: 'auto',
+        height: 'auto',
       },
       
       [`${formItemCls}-control-input`]: {
         minHeight: 'auto',
+        height: 'auto',
+      },
+      
+      [`${formItemCls}-control-input-content`]: {
+        minHeight: token.controlHeight * 1.5,
       },
     },
 
