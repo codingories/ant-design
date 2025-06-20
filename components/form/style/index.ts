@@ -589,7 +589,6 @@ const genItemVerticalStyle: GenerateStyle<FormToken> = (token) => {
     [`${formItemCls}-vertical`]: {
       [`${formItemCls}-row`]: {
         flexDirection: 'column',
-        alignItems: 'flex-start',
       },
 
       [`${formItemCls}-label > label`]: {
@@ -602,17 +601,6 @@ const genItemVerticalStyle: GenerateStyle<FormToken> = (token) => {
       
       [`${formItemCls}-control-input`]: {
         minHeight: 'auto',
-        height: 'auto',
-      },
-      
-      [`${formItemCls}-control-input-content`]: {
-        height: 'auto',
-        minHeight: token.controlHeight * 1.5,
-      },
-      
-      'textarea.ant-input': {
-        height: 'auto',
-        minHeight: token.controlHeight * 1.5,
       },
     },
 
